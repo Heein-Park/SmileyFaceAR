@@ -21,17 +21,18 @@ var mH = blipp.getMarker().getHeight();
 var sW = blipp.getScreenWidth() * 1.003;
 var sH = blipp.getScreenHeight() * 1.003;
 
-scene.on('create', function() {
-    var smileyMask = scene.addSprite("smiley-face.png")
+scene.onCreate = function() {
+    var smileyMask = scene.addSprite()
+                          .setTexture("smiley-face.png")
                           .setName("smiley-face")
                           .setTranslation(0, 0, 1)
-                          .setScale(1, 1, 1);
-});
+                          .setScale(mW, mH, 1);
+}
 
 /*-----------------------------------*/
 /*----------- Scene Show ------------*/
 /*-----------------------------------*/
 
-scene.on('show', function() {
+scene.onShow = function() {
     console.log("Hello! World!");
-});
+}
