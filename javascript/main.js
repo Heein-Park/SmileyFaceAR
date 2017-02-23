@@ -34,7 +34,7 @@ scene.onCreate = function() {
                           .setTexture("smiley-face.png")
                           .setName("smileyMask")
                           .setTranslation(0, 0, 1)
-                          .setScale(mW * 1.5, mH * 1.5, 1);
+                          .setScale(mW * 3, mH * 3, 1);
     
     scene.whiteBG = scene.getScreen().addSprite()
                                      .setColor('#ffffffff')
@@ -53,7 +53,7 @@ scene.onCreate = function() {
     scene.closeButton = scene.getScreen().addSprite()
                                         .setTexture("closebutton.png")
                                         .setName("closeButton")
-                                        .setTranslation(sW/2 - 30, sH/2 - 30, 1)
+                                        .setTranslation(sW/2 - 50, sH/2 - 50, 1)
                                         .setScale(100, 100, 1);
     
     scene.closeButton.on('touchEnd', function(id, x, y) {
