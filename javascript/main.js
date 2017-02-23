@@ -8,9 +8,6 @@ blipp.getPeel()
      .setOrientation("portrait")
      .setType("fit");
 
-blipp.hideUiComponents("blippShareButton", "likeButton", "peelCloseButton");
-
-
 /*-------------------------------------*/
 /*----------- Scene Create ------------*/
 /*-------------------------------------*/
@@ -31,6 +28,8 @@ var sW = blipp.getScreenWidth();
 var sH = blipp.getScreenHeight();
 
 scene.onCreate = function() {
+    blipp.hideUiComponents("blippShareButton", "likeButton", "peelCloseButton");
+    
     scene.smileyMask = scene.addSprite()
                           .setTexture("smiley-face.png")
                           .setName("smileyMask")
@@ -54,9 +53,8 @@ scene.onCreate = function() {
     scene.closeButton = scene.getScreen().addSprite()
                                         .setTexture("closebutton.png")
                                         .setName("closeButton")
-                                        .setTranslation(sW - 30, sH - 30, 0.5)
+                                        .setTranslation(sW - 30, sH - 30, 1)
                                         .setScale(1, 1, 1)
-                                        .setAlpha(1);
     
     closeButton.on('touchEnd', function(id, x, y) {
 		blipp.close();
