@@ -6,7 +6,8 @@ blipp = require('blippar').blipp;
 
 blipp.getPeel()
      .setOrientation("portrait")
-     .setType("fit");
+     .setType("fit")
+     .hideUiComponents("blippShareButton", "likeButton", "peelCloseButton");
 
 
 /*-------------------------------------*/
@@ -45,9 +46,20 @@ scene.onCreate = function() {
     scene.contagious = scene.getScreen().addSprite()
                                         .setTexture("marker-text.png")
                                         .setName("contagious")
-                                        .setTranslation(0, 0, 1)
-                                        .setScale(mW, mH, 1)
+                                        .setTranslation(0, 0, 0.5)
+                                        .setScale(mW * 0.9, mH * 0.9, 1)
                                         .setAlpha(0);
+    
+    scene.closeButton = scene.getScreen().addSprite()
+                                        .setTexture("closebutton.png")
+                                        .setName("closeButton")
+                                        .setTranslation(sW - 30, sH - 30, 0.5)
+                                        .setScale(1, 1, 1)
+                                        .setAlpha(1);
+    
+    closeButton.on('touchEnd', function(id, x, y) {
+		blipp.close();
+	});
 }
 
 /*-----------------------------------*/
