@@ -14,12 +14,19 @@ blipp.getPeel()
 /*-------------------------------------*/
 
 var scene = blipp.addScene("default");
+var transitionT = 100; // .1 second
 
+/*------------------*/
+/* Size of a marker */
+/*------------------*/
 var mW = blipp.getMarker().getWidth();
 var mH = blipp.getMarker().getHeight();
 
-var sW = blipp.getScreenWidth() * 1.003;
-var sH = blipp.getScreenHeight() * 1.003;
+/*-------------*/
+/* Screen Size */
+/*-------------*/
+var sW = blipp.getScreenWidth();
+var sH = blipp.getScreenHeight();
 
 scene.onCreate = function() {
     scene.smileyMask = scene.addSprite()
@@ -28,11 +35,19 @@ scene.onCreate = function() {
                           .setTranslation(0, 0, 1)
                           .setScale(mW * 1.5, mH * 1.5, 1);
     
-    scene.whiteBG = scene.addSprite()
-                          .setColor('#ffffffff')
-                          .setName("whiteBG")
-                          .setTranslation(0, 0, 0)
-                          .setScale(sW, sH * 1.5, 1);
+    scene.whiteBG = scene.getScreen().addSprite()
+                                     .setColor('#ffffffff')
+                                     .setName("whiteBG")
+                                     .setTranslation(sW/2, sH/2, 0)
+                                     .setScale(sW, sH, 1)
+                                     .setAlpha(0);
+    
+    scene.contagious = scene.getScreen().addSprite()
+                                        .setTexture("marker-text.png")
+                                        .setName("contagious")
+                                        .setTranslation(sW/2, sH/2, 1)
+                                        .setScale(mW, mH, 1)
+                                        .setAlpha(0);
 }
 
 /*-----------------------------------*/
@@ -40,15 +55,18 @@ scene.onCreate = function() {
 /*-----------------------------------*/
 
 scene.onShow = function() {
-    console.log("Hello! World!");
 }
 
 scene.onTrack = function () { 
 	// Show the smiley mask
-	scene.smileyMask.animate().alpha(1).duration(500);
+	scene.smileyMask.animate().alpha(1).duration(transitionT);
+    scene.whiteBG.animate().alpha(0).duration(transitionT);
+    scene.contagious.animate().alpha(0).duration(transitionT);
 }
 
 scene.onTrackLost = function () { 
 	// Hide the smiley mask
-	scene.smileyMask.animate().alpha(0).duration(500);
+	scene.smileyMask.animate().alpha(0).duration(transitionT);
+    scene.whiteBG.animate().alpha(1).duration(transitionT);
+    scene.contagious.animate().alpha(1).duration(transitionT);
 }
