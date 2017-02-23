@@ -53,7 +53,7 @@ scene.onCreate = function() {
     scene.closeButton = scene.getScreen().addSprite()
                                         .setTexture("closebutton.png")
                                         .setName("closeButton")
-                                        .setTranslation(sW/2, sH/2, 1)
+                                        .setTranslation(sW/2 - 30, sH/2 - 30, 1)
                                         .setScale(100, 100, 1);
     
     scene.closeButton.on('touchEnd', function(id, x, y) {
