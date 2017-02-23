@@ -25,7 +25,7 @@ scene.on('create', function() {
     var smileyMask = scene.addSprite("smiley-face.png")
                           .setName("smiley-face")
                           .setTranslation(0, 0, 1)
-                          .setScale(markerW, markerH, 1);
+                          .setScale(1, 1, 1);
 });
 
 /*-----------------------------------*/
