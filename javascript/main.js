@@ -27,6 +27,12 @@ scene.onCreate = function() {
                           .setName("smileyMask")
                           .setTranslation(0, 0, 1)
                           .setScale(mW * 1.5, mH * 1.5, 1);
+    
+    scene.whiteBG = scene.addSprite()
+                          .setColor('#ffffffff')
+                          .setName("whiteBG")
+                          .setTranslation(0, 0, 0)
+                          .setScale(sW, sH * 1.5, 1);
 }
 
 /*-----------------------------------*/
