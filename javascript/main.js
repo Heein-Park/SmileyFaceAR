@@ -26,7 +26,7 @@ scene.onCreate = function() {
                           .setTexture("smiley-face.png")
                           .setName("smiley-face")
                           .setTranslation(0, 0, 1)
-                          .setScale(mW, mH, 1);
+                          .setScale(mW * 1.5, mH * 1.5, 1);
 }
 
 /*-----------------------------------*/
@@ -35,4 +35,14 @@ scene.onCreate = function() {
 
 scene.onShow = function() {
     console.log("Hello! World!");
+}
+
+scene.onTrack = function () { 
+	// Show the smiley mask
+	scene.smileyMask.animate().alpha(1).duration(500);
+}
+
+scene.onTrackLost = function () { 
+	// Hide the smiley mask
+	scene.smileyMask.animate().alpha(0).duration(500);
 }
