@@ -38,14 +38,14 @@ scene.onCreate = function() {
     scene.whiteBG = scene.getScreen().addSprite()
                                      .setColor('#ffffffff')
                                      .setName("whiteBG")
-                                     .setTranslation(sW/2, sH/2, 0)
+                                     .setTranslation(0, 0, 0)
                                      .setScale(sW, sH, 1)
                                      .setAlpha(0);
     
     scene.contagious = scene.getScreen().addSprite()
                                         .setTexture("marker-text.png")
                                         .setName("contagious")
-                                        .setTranslation(sW/2, sH/2, 1)
+                                        .setTranslation(0, 0, 1)
                                         .setScale(mW, mH, 1)
                                         .setAlpha(0);
 }
