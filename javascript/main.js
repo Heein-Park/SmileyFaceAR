@@ -24,6 +24,7 @@ var sH = blipp.getScreenHeight() * 1.003;
 scene.on('create', function() {
     var smileyMask = scene.addSprite("smiley-face.png")
                           .setName("smiley-face")
+                          .setTranslation(0, 0, 1)
                           .setScale(markerW, markerH, 1);
 });
 
