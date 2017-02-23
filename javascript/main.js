@@ -6,8 +6,9 @@ blipp = require('blippar').blipp;
 
 blipp.getPeel()
      .setOrientation("portrait")
-     .setType("fit")
-     .hideUiComponents("blippShareButton", "likeButton", "peelCloseButton");
+     .setType("fit");
+
+blipp.hideUiComponents("blippShareButton", "likeButton", "peelCloseButton");
 
 
 /*-------------------------------------*/
