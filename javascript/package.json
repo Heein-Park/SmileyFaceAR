@@ -1,0 +1,13 @@
+{
+    "version": "1.0.0",
+    "description": "Smiley Man AR Mask",
+    "main": "main.js",
+    "blipp" : {
+        "title": "Smiley Man AR Mask",
+        "shortTitle": "Smiley Man",
+        "icon": "smiley-face.png"
+    },
+    "dependencies": {
+        "blippar": "1.4.6"
+    }
+}
