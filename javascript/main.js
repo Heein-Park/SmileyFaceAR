@@ -53,7 +53,8 @@ scene.onCreate = function() {
     scene.closeButton = scene.getScreen().addSprite()
                                         .setTexture("closebutton.png")
                                         .setName("closeButton")
-                                        .setTranslation(0, 0, 1);
+                                        .setTranslation(0, 0, 1)
+                                        .setScale(mW, mH, 1);
     
     scene.closeButton.on('touchEnd', function(id, x, y) {
 		blipp.close();
