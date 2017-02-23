@@ -22,9 +22,9 @@ var sW = blipp.getScreenWidth() * 1.003;
 var sH = blipp.getScreenHeight() * 1.003;
 
 scene.onCreate = function() {
-    var smileyMask = scene.addSprite()
+    scene.smileyMask = scene.addSprite()
                           .setTexture("smiley-face.png")
-                          .setName("smileyFace")
+                          .setName("smileyMask")
                           .setTranslation(0, 0, 1)
                           .setScale(mW * 1.5, mH * 1.5, 1);
 }
@@ -39,10 +39,10 @@ scene.onShow = function() {
 
 scene.onTrack = function () { 
 	// Show the smiley mask
-	scene.smileyFace.animate().alpha(1).duration(500);
+	scene.smileyMask.animate().alpha(1).duration(500);
 }
 
 scene.onTrackLost = function () { 
 	// Hide the smiley mask
-	scene.smileyFace.animate().alpha(0).duration(500);
+	scene.smileyMask.animate().alpha(0).duration(500);
 }
