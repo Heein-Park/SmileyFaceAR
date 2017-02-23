@@ -2,7 +2,7 @@
 /*------------- Blipp -------------*/
 /*---------------------------------*/
 
-var blipp = require('blippar').blipp;
+blipp = require('blippar').blipp;
 
 blipp.getPeel()
      .setOrientation("portrait")
