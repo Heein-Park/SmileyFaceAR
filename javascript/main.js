@@ -4,12 +4,6 @@
 
 var blipp = require('blippar').blipp;
 
-var mW = blipp.getMarker().getWidth();
-var mH = blipp.getMarker().getHeight();
-
-var sW = blipp.getScreenWidth() * 1.003;
-var sH = blipp.getScreenHeight() * 1.003;
-
 blipp.getPeel()
      .setOrientation("portrait")
      .setType("fit");
@@ -21,15 +15,18 @@ blipp.getPeel()
 
 var scene = blipp.addScene("default");
 
-scene.on('create', createSmiley);
+var mW = blipp.getMarker().getWidth();
+var mH = blipp.getMarker().getHeight();
 
-fucntion createSmiley() {
+var sW = blipp.getScreenWidth() * 1.003;
+var sH = blipp.getScreenHeight() * 1.003;
+
+scene.on('create', fucntion() {
     var smileyMask = scene.addpSprite("smiley-face.png")
                           .setName("smiley-face")
                           .setScale(markerW, markerH, 1);
-    
-    return smileyMask;
-}
+    });
+
 
 /*-----------------------------------*/
 /*----------- Scene Show ------------*/
